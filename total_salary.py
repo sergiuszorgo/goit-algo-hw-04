@@ -8,7 +8,7 @@ def total_salary(path):
 					continue
 				try:
 					_, salary_str = line.split(',')
-					salary = int(salary_str.strip())
+					salary = float(salary_str.strip())
 					salaries.append(salary)
 				except ValueError:
 					print(f'Ошибка в строке {line}')
@@ -16,7 +16,7 @@ def total_salary(path):
 			# if not salaries:
 			# 	return (0, 0)
 			total = sum(salaries)
-			average = total // len(salaries)
+			average = total / len(salaries)
 
 			return (total, average)
 		
@@ -29,4 +29,4 @@ def total_salary(path):
 
 
 total, average = total_salary("salary_file.txt")
-print(f"Общая сумма заработной платы: {total}, Средняя заработная плата: {average}")
+print(f"Общая сумма заработной платы: {total:.2f}, Средняя заработная плата: {average:.2f}")
